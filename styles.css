@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+}
+
+.left-half, .right-half {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-half {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.regions {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.mortgage {
+    font-size: 14px;
+}
+
+.enroll-btn {
+    padding: 10px 20px;
+    color: green;
+    border: 1px solid green;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: white;
+    font-weight: bold;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px; /* Set a max width for the form */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 40px;
+}
+
+.login-form h2 {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.login-form p {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+   
+    
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-90%);
+    cursor: pointer;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    width: 100%;
+    
+}
+
+.remember-me input {
+    margin-right: 5px;
+    margin-left: 0;
+    padding-left: 0;
+    width: 10%;
+    margin-bottom: 5px;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #d3d3d3; /* Initial gray color */
+    color: white;
+    border: none;
+    cursor: not-allowed; /* Initially not clickable */
+    border-radius: 50px;
+    margin-bottom: 10px;
+}
+
+.login-btn.active {
+    background-color: #28a745; /* Green color when active */
+    cursor: pointer;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.option-link {
+    color: #28a745; /* Green color */
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.right-half .cover-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    border-radius: 50px;
+    padding: 15px;
+}
+
+.newCustomer {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.input-valid {
+    border : 3px solid green /* Green border color when valid */
+}
+
+.login-form input:focus {
+    outline: none;
+    border : 3px solid green/* Optional: update border color on focus */
+}
+
+.right-half .cover-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    border-radius: 50px;
+    padding: 15px;
+    transform-origin: center center; /* Ensure correct scaling */
+}
+
+
+.right-half {
+    position: relative; /* Ensure the right-half is positioned relative to allow absolute positioning of the image */
+}
+
+.cover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0; /* Remove border radius for full screen effect */
+    z-index: 1; /* Make sure the image is on top */
+    transform-origin: center center; /* Scaling from center */
+    
+}
+
+/* Additional styles for animation */
+.logo-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Ensure the logo appears on top */
+    opacity: 0; /* Start as invisible */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for visibility */
+}
+
+.full-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 999; /* Ensure the image appears on top */
+    transform: scale(0); /* Start collapsed */
+    transition: transform 1s ease-in-out; /* Smooth scaling transition */
+}
+
+
+.full-screen-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 999; /* Ensure the image appears on top */
+    transform: scale(0); /* Start collapsed */
+    transform-origin: center center; /* Scale from the center */
+}
+
+.hidden {
+    position: absolute;
+    left: -100%; /* Move out of view */
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
