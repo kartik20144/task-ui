@@ -19,6 +19,7 @@ body {
     width: 50%;
     display: flex;
     flex-direction: column;
+    padding: 10px;
 }
 
 .left-half {
@@ -248,4 +249,46 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
+}
+
+.enroll-container {
+    position: relative;
+    display: inline-block;
+   
+}
+
+.enroll-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Tooltip styling */
+.tooltip {
+    position: absolute;
+    margin: 10px;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 200px;
+    visibility: hidden; /* Hide tooltip initially */
+    opacity: 0; /* Set opacity to 0 */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Tooltip text styling */
+.tooltip p {
+    margin: 5px 5px;
+}
+
+/* Show tooltip on hover */
+.enroll-container:hover .tooltip {
+    visibility: visible; /* Make tooltip visible */
+    opacity: 1; /* Fade in the tooltip */
 }

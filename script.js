@@ -109,3 +109,17 @@ document.addEventListener("DOMContentLoaded", function () {
   onlineIdInput.addEventListener("input", validateForm);
   passwordInput.addEventListener("input", validateForm);
 });
+
+const scrollButton = document.querySelector('.scroll-button');
+const tooltip = document.querySelector('.tooltip');
+
+scrollButton.addEventListener('mouseover', () => {
+    tooltip.style.display = 'block';
+    tooltip.style.opacity = '1';
+});
+
+scrollButton.addEventListener('mouseout', () => {
+    tooltip.style.display = 'none';
+    tooltip.style.opacity = '0';
+});
+
