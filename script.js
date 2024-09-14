@@ -151,6 +151,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
     function animateLogin() {
+      gsap.to(logo, {
+        scale: 1.5,
+        x:"50vw",
+        y:"50vh",
+        duration: 0,
+        ease: "power1.inOut",
+      });
       gsap.to(coverImage, {
         scale: 0,
         duration: 1,
@@ -161,7 +168,7 @@ document.addEventListener("DOMContentLoaded", function () {
         y: "100%",
         // Move left half out of view
         display: "none",
-        duration: 1,
+        duration: 3,
         ease: "power1.inOut",
         onComplete: () => {
           // Step 2: Expand the image to full screen
@@ -194,6 +201,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
                   gsap.to(coverImage, {
                     scale: 1, // Assuming original scale is 1
+                    duration: 2,
+                    transformOrigin: "center center",
+                    ease: "power1.inOut",
+                  });
+                  gsap.to(logo, {
+                    scale: 1,
+                    x: "0vw",
+                    y: "0vh",
                     duration: 2,
                     transformOrigin: "center center",
                     ease: "power1.inOut",
